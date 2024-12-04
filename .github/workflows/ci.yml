@@ -13,25 +13,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Clonar el repositorio
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    # Configurar Node.js
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
         node-version: 16
 
-    # Instalar dependencias
     - name: Install dependencies
       run: npm install
 
-    # Ejecutar pruebas
     - name: Run tests
-      run: |
-        echo "No se han configurado pruebas aún" # Puedes cambiar esto cuando agregues pruebas
-
-    # Desplegar (opcional)
-    # - name: Deploy (opcional)
-    #   run: echo "Configurar despliegue aquí"
+      run: npm test
